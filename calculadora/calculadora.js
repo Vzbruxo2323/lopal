@@ -12,15 +12,27 @@ function calculadora(){
         resultado = operando1 + operando2;
     }else if (operador === "_"){
         resultado = operando1 - operando2;
-    }else if (operador === "*"){
-        resultado = operando1 * operando2
-    }else if (operador === "/"){
-        resultado = operando1 / operando2
-    }else{
-        alert("Operador inválido!");
-        return 
-    }
-    alert("resultado: " + 
-        operando1 + " " + operador + " " + operdor2 + "=" + resultado);
 
+    } else if (operador === "*"){
+        resultado = operando1 * operando2;
+
+    } else if (operador === "/"){
+        if (operando2 == 0){
+            alert("não é possivel dividir por zero.");
+            let continua = prompt("Digite sim para continuar e não encerrar.");
+            
+            if (continua === "não"){
+                return;
+            }
+        } else {    
+            resultado = operando1 / operando2;
+        }
+
+    } else {
+        alert("Operador inválido!");
+        return;
+    }
+        
+    alert("resultado: " +  
+        operando1 + " " + operador + " " + operando2 + " = " + resultado);
 }
